@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+    <Name>sca calc</Name>
+    <Version>1.0.0</Version>
+    <Title>INSTALL sca calc</Title>
+    <Publisher>sca255	</Publisher>
+    <StartMenuDir>sca255</StartMenuDir>
+    <TargetDir>@HomeDir@/Documents/sca255/apps/sca_calc</TargetDir>
+</Installer>

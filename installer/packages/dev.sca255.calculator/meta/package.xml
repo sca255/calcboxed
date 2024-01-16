@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+    <DisplayName>sca calc</DisplayName>
+    <Description>This is going to install sca calc on your machine</Description>
+    <Version>1.0.0</Version>
+    <ReleaseDate>2024-01-16</ReleaseDate>
+    <Licenses>
+        <License name="sca25_lic" file="license.txt" />
+    </Licenses>
+    <Default>true</Default>
+</Package>

@@ -1,0 +1,3 @@
+This software is free to use .
+If anyone wanna redistribute it themselves they have to make the app free.
+Anyone may fork it freely but may not just copy the code without making any changes.
