@@ -30,4 +30,5 @@ contains(ANDROID_TARGET_ARCH,arm64-v8a) {
 
 DISTFILES += \
     README.md \
-    android/AndroidManifest.xml
+    android/AndroidManifest.xml \
+    test.md

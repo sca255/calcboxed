@@ -12,4 +12,4 @@ so, if anyone can please provide binaries for them
 website and features of scientific calculator will be released in future versions
 maybe not the next but future versions as it is planned
 
-[1]: qt.io
+[1]: https://www.qt.io
