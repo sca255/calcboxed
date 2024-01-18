@@ -31,6 +31,8 @@ calculator::calculator(QWidget *parent)
     connect(ui->pushButton_mod,SIGNAL(clicked(bool)),this,SLOT(add_mod_l1()));
     connect(ui->pushButton_clear,SIGNAL(clicked(bool)),this,SLOT(clear()));
     connect(ui->pushButton_back,SIGNAL(clicked(bool)),this,SLOT(back()));
+
+
     //connect(ui->pushButton_hxtt,SIGNAL(clicked(bool)),this,SLOT(app_hxat()));
 }
 

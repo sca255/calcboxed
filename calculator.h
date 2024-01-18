@@ -6,6 +6,7 @@
 #include <cmath>
 #include <QJSEngine>
 #include <string>
+#include <QMenu>
 //#include <QObject>
 //#include <QtMath>
 
@@ -23,6 +24,7 @@ class calculator : public QMainWindow
 public:
     calculator(QWidget *parent = nullptr);
     ~calculator();
+
 
 
 
