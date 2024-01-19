@@ -17,7 +17,7 @@ jobs:
       - run: sh -c 'sudo apt update; sudo apt install -y libgl-dev libvulkan-dev;
              qt-cmake . -G Ninja -B ./build; cmake --build ./build;
              linuxdeploy --plugin qt -e "$(find ./build -maxdepth 1 -type f -executable)" --appdir ./build/deploy'
-      - run: sudo apt install tarlz
+      - run: sudo apt install tarlz;
             tarlz -c build.zip build/deploy/*
       - store_artifacts:
           path: ./build.zip
@@ -47,7 +47,7 @@ jobs:
       - checkout
       - run: sh -c 'qt-cmake ./ -G Ninja -B ./build; 
             cmake --build ./build'
-      - run: sudo apt install tarlz
+      - run: sudo apt install tarlz;
             tarlz -c build.zip build/*
       - store_artifacts:
           path: ./build.zip
@@ -64,7 +64,7 @@ jobs:
       - run: sh -c 'qt-cmake . -G Ninja -B ./build; 
              cmake --build ./build
             windeployqt --qmldir .--dir build/deploy --libdir build/deploy/libs --plugindir build/deploy/plugins build/*.exe'
-      - run: sudo apt install tarlz
+      - run: sudo apt install tarlz;
             tarlz -c build.zip build/deploy/*
       - store_artifacts:
           path: ./build.zip
