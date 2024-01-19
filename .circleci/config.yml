@@ -17,8 +17,10 @@ jobs:
       - run: sh -c 'sudo apt update; sudo apt install -y libgl-dev libvulkan-dev;
              qt-cmake . -G Ninja -B ./build; cmake --build ./build;
              linuxdeploy --plugin qt -e "$(find ./build -maxdepth 1 -type f -executable)" --appdir ./build/deploy'
+      - run: sudo apt install tarlz
+            tarlz -c build.zip build/deploy/*
       - store_artifacts:
-          path: build/deploy
+          path: ./build.zip
           destination: scacalc_lin.zip
   build_and:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
@@ -45,8 +47,10 @@ jobs:
       - checkout
       - run: sh -c 'qt-cmake ./ -G Ninja -B ./build; 
             cmake --build ./build'
+      - run: sudo apt install tarlz
+            tarlz -c build.zip build/*
       - store_artifacts:
-          path: build
+          path: ./build.zip
           destination: scacalc.zip
   build_win:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
@@ -58,10 +62,12 @@ jobs:
     steps:
       - checkout
       - run: sh -c 'qt-cmake . -G Ninja -B ./build;
-            cmake --build ./build;
+             cmake --build ./build
             windeployqt --qmldir .--dir build/deploy --libdir build/deploy/libs --plugindir build/deploy/plugins build/*.exe'
+      - run: sudo apt install tarlz
+            tarlz -c build.zip build/deploy/*
       - store_artifacts:
-          path: build/deploy
+          path: ./build.zip
           destination: scacalc_win.zip
   build_mac:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
