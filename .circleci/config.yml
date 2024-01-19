@@ -61,7 +61,7 @@ jobs:
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
       - checkout
-      - run: sh -c 'qt-cmake . -G Ninja -B ./build;
+      - run: sh -c 'qt-cmake . -G Ninja -B ./build; 
              cmake --build ./build
             windeployqt --qmldir .--dir build/deploy --libdir build/deploy/libs --plugindir build/deploy/plugins build/*.exe'
       - run: sudo apt install tarlz
