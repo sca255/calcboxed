@@ -17,7 +17,7 @@ jobs:
       - run: sh -c 'sudo apt update; sudo apt install -y libgl-dev libvulkan-dev;
              qt-cmake . -G Ninja -B ./build; cmake --build ./build;
              linuxdeploy --plugin qt -e "$(find ./build -maxdepth 1 -type f -executable)" --appdir ./build/deploy'
-      - run: sudo apt install tarlz;
+      - run: sudo apt install -y tarlz;
             tarlz -c build.zip build/deploy/*
       - store_artifacts:
           path: ./build.zip
@@ -34,7 +34,7 @@ jobs:
       - run: sh -c 'qt-cmake ./ -G Ninja -B ./build -DQT_ANDROID_BUILD_ALL_ABIS=ON;
             cmake --build ./build'
       - store_artifacts:
-          path: build
+          path: build/android-build/*.apk
           destination: android.zip
   build_wasm:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
