@@ -19,7 +19,6 @@ jobs:
              linuxdeploy --plugin qt -e "$(find ./build -maxdepth 1 -type f -executable)" --appdir ./build/deploy'
       - run: sudo apt install -y zip;
             mkdir opt;
-            touch opt/build.zip;
             zip -r opt/build.zip build/deploy
             
       - store_artifacts:
@@ -54,7 +53,6 @@ jobs:
             cmake --build ./build'
       - run: sudo apt install -y zip
             mkdir opt;
-            touch opt/build.zip;
             zip -r opt/build.zip build
       - store_artifacts:
           path: opt
@@ -73,7 +71,6 @@ jobs:
             windeployqt --qmldir .--dir build/deploy --libdir build/deploy/libs --plugindir build/deploy/plugins build/*.exe';
       - run: sudo apt install -y zip;
             mkdir opt;
-            touch opt/build.zip;
             zip -r opt/build.zip build/deploy
       - store_artifacts:
           path: opt
