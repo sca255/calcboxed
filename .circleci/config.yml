@@ -51,7 +51,7 @@ jobs:
       - checkout
       - run: sh -c 'qt-cmake ./ -G Ninja -B ./build; 
             cmake --build ./build'
-      - run: sudo apt install -y zip
+      - run: sudo apt install -y zip;
             mkdir opt;
             zip -r opt/build.zip build
       - store_artifacts:
