@@ -27,7 +27,7 @@ jobs:
     steps:
       - checkout
       - run: sh -c 'qt-cmake ./ -G Ninja -B ./build -DQT_ANDROID_BUILD_ALL_ABIS=ON; \
-            cmake --build ./build'
+            qt-cmake --build ./build'
   build_wasm:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/configuration-reference/#executor-job
@@ -38,7 +38,7 @@ jobs:
     steps:
       - checkout
       - run: sh -c 'qt-cmake ./ -G Ninja -B ./build; \
-            cmake --build ./build'
+            qt-cmake --build ./build'
   build_win:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/configuration-reference/#executor-job
@@ -48,8 +48,8 @@ jobs:
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
       - checkout
-      - run: sh -c 'qt-cmake ./src -G Ninja -B ./build; cmake --build ./build;
-            windeployqt --qmldir ./src --dir build/deploy --libdir build/deploy/libs --plugindir build/deploy/plugins build/*.exe'
+      - run: sh -c 'qt-cmake . -G Ninja -B ./build; cmake --build ./build;
+            windeployqt --qmldir .--dir build/deploy --libdir build/deploy/libs --plugindir build/deploy/plugins build/*.exe'
   build_mac:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/configuration-reference/#executor-job
@@ -59,7 +59,7 @@ jobs:
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
       - checkout
-      - run: sh -c 'qt-cmake ./project -G Ninja -B ./build; cmake --build ./build;
+      - run: sh -c 'qt-cmake . -G Ninja -B ./build; cmake --build ./build;
             macdeployqt ./build/*.app -verbose=1 -dmg -qmldir=./project'
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
