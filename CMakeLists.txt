@@ -32,7 +32,7 @@ target_link_libraries(calculator PRIVATE Qt6::Qml)
     set_property(TARGET calculator APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
                  ${CMAKE_CURRENT_SOURCE_DIR}/android)
     set_property(TARGET calculator APPEND PROPERTY QT_ANDROID_SIGN_APK
-                 True)
+                 ON)
     set_property(TARGET calculator APPEND PROPERTY QT_ANDROID_KEYSTORE_PATH
                  ${CMAKE_CURRENT_SOURCE_DIR}/calculator.keystore)
     set_property(TARGET calculator APPEND PROPERTY QT_ANDROID_KEYSTORE_ALIAS
