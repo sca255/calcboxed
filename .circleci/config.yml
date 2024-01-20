@@ -33,7 +33,7 @@ jobs:
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
       - checkout
-      - run: export QT_ANDROID_KEYSTORE_PATH="./calculator.keystore";
+      - run: export QT_ANDROID_KEYSTORE_PATH="/home/user/project/calculator.keystore";
             export QT_ANDROID_KEYSTORE_ALIAS="dev.sca255";
             export QT_ANDROID_KEYSTORE_KEY_PASS="das@2009";
             export QT_ANDROID_KEYSTORE_STORE_PASS="das@2009";
