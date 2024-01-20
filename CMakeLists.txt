@@ -24,6 +24,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
 
+
     )
 find_package(Qt6 REQUIRED COMPONENTS Qml)
 target_link_libraries(calculator PRIVATE Qt6::Qml)
