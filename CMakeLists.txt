@@ -31,6 +31,18 @@ target_link_libraries(calculator PRIVATE Qt6::Qml)
 # Define target properties for Android with Qt 6 as:
     set_property(TARGET calculator APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
                  ${CMAKE_CURRENT_SOURCE_DIR}/android)
+    set_property(TARGET calculator APPEND PROPERTY QT_ANDROID_SIGN_APK
+                 True)
+    set_property(TARGET calculator APPEND PROPERTY QT_ANDROID_KEYSTORE_PATH
+                 ${CMAKE_CURRENT_SOURCE_DIR}/calculator.keystore)
+    set_property(TARGET calculator APPEND PROPERTY QT_ANDROID_KEYSTORE_ALIAS
+                 "dev.sca255")
+
+
+    set_property(TARGET calculator APPEND PROPERTY QT_ANDROID_KEYSTORE_STORE_PASS
+                 "das@2009")
+    set_property(TARGET calculator APPEND PROPERTY QT_ANDROID_KEYSTORE_KEY_PASS
+                 "das@2009")
 # For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
 else()
     if(ANDROID)
