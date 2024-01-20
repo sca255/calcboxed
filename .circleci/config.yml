@@ -95,7 +95,7 @@ jobs:
 workflows:
   build:
     jobs:
-      #- build_lin
+      - build_lin
       - build_and
       #- build_mac
       #- build_wasm
