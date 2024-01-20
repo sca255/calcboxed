@@ -36,7 +36,7 @@ jobs:
       - run: sh -c 'qt-cmake ./ -G Ninja -B ./build -DQT_ANDROID_BUILD_ALL_ABIS=ON;
             cmake --build ./build';
             mkdir opt;
-            cp build/android-build/*.apk opt/
+            cp build/outputs/apk/release/*.apk opt/
       - store_artifacts:
           path: opt
           destination: scacalc_android
