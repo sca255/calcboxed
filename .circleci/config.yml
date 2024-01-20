@@ -33,7 +33,7 @@ jobs:
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
       - checkout
-      - run: sh -c 'qt-cmake ./ -G Ninja -B ./build -DQT_ANDROID_BUILD_ALL_ABIS=ON;
+      - run: sh -c 'qt-cmake ./ -G Ninja -B ./build -DQT_ANDROID_BUILD_ALL_ABIS=ON QT_ANDROID_DEPLOY_RELEASE=ON;
             cmake --build ./build';
             mkdir opt;
             cp build/outputs/apk/release/*.apk opt/
