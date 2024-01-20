@@ -94,5 +94,5 @@ workflows:
       - build_lin
       - build_and
       #- build_mac
-      - build_wasm
-      - build_win
+      #- build_wasm
+      #- build_win
